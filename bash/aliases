@@ -1,5 +1,5 @@
 # changing directory to code project
-function c { cd ~/code/$1; }
+function c { cd /pool/projects/$1; }
 
 # misc
 alias reload='. ~/.bash_profile'
@@ -11,9 +11,6 @@ alias k='kill'
 alias k9='kill -9'
 function ka { kill $(ps xc | grep -wi "$*" | awk '{print $1}'); }
 function ka9 { kill -9 $(ps xc | grep -wi "$*" | awk '{print $1}'); }
-
-# textmate
-function m { mate ${*:-.}; }
 
 # sublime text 2
 function s { subl -n ${*:-.}; }
@@ -60,16 +57,8 @@ function _rails() {
     echo "no script/rails or script/$command found" >&2
   fi
 }
-alias sc='_rails console'
-alias ss='_rails server'
-alias sg='_rails generate'
-alias sd='_rails destroy'
+alias rc='_rails console'
+alias rs='_rails server'
+alias rg='_rails generate'
 
 alias tlog='tail -f log/development.log log/test.log'
-
-# sqlplus with readline
-alias sqlplus="rlwrap sqlplus"
-
-# vi
-alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'

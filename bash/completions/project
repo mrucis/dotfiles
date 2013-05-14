@@ -5,7 +5,7 @@ _projects()
     local curw
     COMPREPLY=()
     curw=${COMP_WORDS[COMP_CWORD]}
-    local projects=$(ls -1 ~/code)
+    local projects=$(ls -1 /pool/projects)
     COMPREPLY=($(compgen -W "$projects" -- $curw));
     return 0
 }

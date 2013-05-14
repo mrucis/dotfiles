@@ -11,7 +11,6 @@ complete -o default -o nospace -F _git_commit gc
 complete -o default -o nospace -F _git_diff gd
 complete -o default -o nospace -F _git_diff gdc
 complete -o default -o nospace -F _git_diff gdcs
-source ~/.bash/completions/mategem
 source ~/.bash/completions/bundler
 source ~/.bash/completions/project
 complete -C ~/.bash/completions/rake -o default rake
@@ -23,8 +22,7 @@ _rvm_prompt() { local s=$(rvm-prompt v g); printf "${s:+ ${s}}"; }
 export PS1="[ \[\e[31;1m\]\$(_user_root)\[\e[35;1m\]\w\[\e[33;1m\]\$(_rvm_prompt)\[\e[34;1m\]\$(_scm_info)\[\e[0m\] ]\[\e[32;1m\] %\[\e[0m\] "
 
 export PATH=./bin:$HOME/bin:$HOME/.gem/ruby/1.8/bin:/opt/local/bin:/opt/local/sbin:/sw/bin:$PATH
-export EDITOR="mate -w"
-# stty erase ^H # brakes backspace in vim
+export EDITOR="subl -w"
 
 ### Bash http://blog.macromates.com/2008/working-with-history-in-bash/
 export HISTCONTROL=erasedups
@@ -47,20 +45,3 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=60000000
 export RUBY_HEAP_FREE_MIN=200000
 export RUBY_FREE_MIN=200000
-
-### Oracle
-export ORACLE_IC_HOME=$HOME/Library/Oracle/instantclient
-export DYLD_LIBRARY_PATH=$ORACLE_IC_HOME
-export TNS_ADMIN=$DYLD_LIBRARY_PATH
-export PATH=$PATH:$DYLD_LIBRARY_PATH
-export NLS_LANG=AMERICAN_AMERICA.UTF8
-export SQLPATH=$HOME
-
-### Java
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
-export JRUBY_OPTS="-J-d32 -J-Xmn128m -J-Xms256m -J-Xmx1024m -J-XX:MaxPermSize=512m -J-XX:ReservedCodeCacheSize=512M -J-XX:+TieredCompilation -J-Djruby.launch.inproc=true"
-export SBT_OPTS="-Xmn128m -Xms256m -Xmx1024m"
-
-### Homebrew
-export PATH=$HOME/.homebrew/sbin:$HOME/.homebrew/bin:$PATH
-export MANPATH=$HOME/.homebrew/share/man:$MANPATH

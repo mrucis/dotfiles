@@ -1,16 +1,18 @@
 [user]
-  name = Edgars Beigarts
-  email = edgars.beigarts@makit.lv
+  name = Māris Rucis
+  email = mrucis@gmail.com
 [alias]
   co = checkout
+  meld = !/pool/tools/git-meld/git-meld.pl
 [apply]
   whitespace = nowarn
 [core]
-  editor = mate -w
+  editor = subl -w
   excludesfile = ~/.gitignore
 [branch]
   autosetuprebase = always
 [color]
+  ui = true
   status = auto
   branch = auto
   interactive = auto
